@@ -1,0 +1,36 @@
+section {
+    padding: 45px 0 80px 20px;
+/*    background: #f1f1f1;*/
+/*    margin: 0 45px 0 80px;*/
+}
+
+#lubrifiants .heading{
+    text-transform: uppercase;
+    color: forestgreen;
+}
+
+.green-devider{
+    width: 100px;
+    height: 2px;
+    background: forestgreen;
+    margin: 0 auto;
+}
+
+.headline__main-text{
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02rem;
+    font-size: 1.5rem;
+}
+
+.headline__sub-text{
+    color: #73726c;
+    margin-top: .8rem;
+    max-width: 60rem;
+    padding-bottom: 25px;
+}
+
+.product-Menu ul li .nav-link{
+    color: dimgray;
+    font-weight: bold;
+}
