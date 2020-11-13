@@ -31,8 +31,8 @@
 
 {{-- partie junbotron --}}
 
-</div>
-</div>
+    </div>
+  </div>
 </div>    <!--	End jumbotron			-->
 
 {{-- partie du footer --}}

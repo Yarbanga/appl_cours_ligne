@@ -29,6 +29,7 @@
       </form>
 
       @include('partials.basecontact')
-      @include('partials.footer')
-    
+
       @endsection
+
+     

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'AcceuilController@index')->name('acceuil');
+Route::get('inscription', 'AcceuilController@inscription')->name('inscription');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

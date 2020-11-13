@@ -8,8 +8,13 @@ class AcceuilController extends Controller
 {
     
     public function index() {
-        
+
         return view('acceuil');
+    }
+
+    public function inscription() {
+        
+        return view('inscription');
     }
 
 }

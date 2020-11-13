@@ -17,6 +17,7 @@
     
     @yield('contenu')
 
+    @yield('footer')
 
     <script src="{{ asset('acceuil/js/fontawesome-all.min.js') }}"></script>
     <script src="{{ asset('acceuil/js/jquery-3.4.1.slim.min.js') }}"></script>

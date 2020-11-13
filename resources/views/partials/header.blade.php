@@ -11,7 +11,7 @@
 				<div id="contenu" class="jumbotron jumbotron-fluid center-text rounded">
 					<div class="row">
 						<div class="container col-lg-4 center-text border-radius-15">
-							<div class="row container center">
+							<div class=" container center">
 								<a href="">
 								<img src="{{ asset('acceuil/img/logo1.jpg') }}" class="img-fluid img-responsive center-bloc" alt="Responsive image" href="index.html">
 								</a>
@@ -36,7 +36,7 @@
                </div>
 
 							</div>
-							<div class="row container-fluid">
+							<div class=" container-fluid">
 							     <div class="carousel slide " data-ride="carousel">
 								  <div class="carousel-inner">
 									<div class="carousel-item active">
