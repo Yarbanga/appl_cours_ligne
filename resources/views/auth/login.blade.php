@@ -68,7 +68,7 @@
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Connexion</button>
-                        <a href="{{ route ('inscription') }}" class="btn btn-primary" style="color:#fff;">S'inscrire</a>
+                        <a href="{{ route ('register') }}" class="btn btn-primary" style="color:#fff;">S'inscrire</a>
                             
                         </div>
 

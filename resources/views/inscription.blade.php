@@ -8,13 +8,13 @@
 
 <div  class="col-lg-8" >
 
-                    <form class="mt-5 m-2" method="POST" action="">
+<form class="mt-5 m-2" method="POST" action="{{ route('register') }}">
                         @csrf
                         <p class="h1 text-center mb-2">Inscription</p>
 
                         <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control" name="name" placeholder="nom" @error('nom') is-invalid @enderror value="{{ old('nom') }}" required>
+                                <input type="text" class="form-control" name="nom" placeholder="nom" @error('nom') is-invalid @enderror value="{{ old('nom') }}" required autocomplete="name" autofocus>
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -339,8 +339,8 @@
                             </div>
 
                             <div class="col">
-                                    <select name="class" required class="form-control" id="exampleFormControlSelect1" required>
-                                        <option value="0" selected="selected">Classe </option>
+                                    <select name="classe" required class="form-control" id="exampleFormControlSelect1" required>
+                                        <option value="0" selected="selected">Choisir la classe </option>
                                         <option value="1">CP1 </option>
                                         <option value="2">CP2 </option>
                                         <option value="3">CE1 </option>
@@ -375,8 +375,8 @@
                             </select>
                             </div>
                             <div class="col">
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" @error('email') is-invalid @enderror value="{{ old('email') }}" required>
-                                @error('password')
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" @error('file') is-invalid @enderror value="{{ old('file') }}" required>
+                                @error('file')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -386,7 +386,7 @@
 
                     <div class="row mb-1">
                             <div class="col">
-                                <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" @error('email') is-invalid @enderror value="{{ old('email') }}" required>
+                                <input type="password" class="form-control" name="password" placeholder="Mot de passe" @error('password') is-invalid @enderror value="{{ old('password') }}" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -394,19 +394,14 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="password" class="form-control" name="mdp_confirm"placeholder="Confirmer mot de passe" @error('email') is-invalid @enderror value="{{ old('email') }}" required>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirm" placeholder="Confirmer mot de passe" required autocomplete="new-password">
                             </div>
                     </div>
                       
 
                         <div class="text-center mt-5">
                             <button type="submit" class="btn btn-primary">inscription</button>
-                            <a href="" class="btn btn-primary" style="color:#fff;">Annuler</a>
+                        <a href="{{ route('acceuil') }}" class="btn btn-primary" style="color:#fff;">Annuler</a>
 
                         </div>
 
