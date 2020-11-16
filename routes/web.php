@@ -24,4 +24,8 @@ Route::get('inscription', 'AcceuilController@inscription')->name('inscription');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// route de ladmin
+Route::get('/admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('/admin', 'Admin\LoginController@login');
+Route::get('admin/dashboard', 'AdminController@index');
 
