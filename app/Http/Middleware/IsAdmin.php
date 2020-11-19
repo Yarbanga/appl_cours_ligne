@@ -21,6 +21,6 @@ class IsAdmin
             
         }
 
-        return redirect()->route('home')->with('error',"Page reservée au admin n'as pas accès à cette page.");
+        return redirect()->route('home');
     }
 }
