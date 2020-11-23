@@ -5,8 +5,15 @@
 @include('partials.header')
 </div>
 
-<div  class="col-lg-8" >
 
+<div  class="col-lg-8" >
+                        @if (session('success'))    
+                        <div class="container">
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        </div>
+                        @endif
                     <form class="mt-5 m-2" method="POST" action="{{ route('login') }}">
                         @csrf
                         <p class="h1 text-center mb-5">Connexion</p>

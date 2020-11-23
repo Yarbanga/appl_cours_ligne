@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\RegisteredUser;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -39,6 +43,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function register (Request $request) {
+
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $user->notify(new RegisteredUser());
+
+        return redirect('/login')->with('success', 'votre compte à été créé, Nous vous avons envoyé un email de confirmation');
+
     }
 
     /**
@@ -86,6 +102,7 @@ class RegisterController extends Controller
             'classe' => $data['classe'],
             'photo' => $data['photo'],
             'password' => Hash::make($data['password']),
+            'confirmation_token' => bcrypt(Str::random(16)),
         ]);
     }
 }

@@ -13,7 +13,7 @@
 
                         <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control" name="nom" placeholder="nom" @error('nom') is-invalid @enderror value="{{ old('nom') }}" required autocomplete="name" autofocus>
+                                <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" placeholder="nom"  value="{{ old('nom') }}" required autocomplete="name" autofocus>
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -21,7 +21,7 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" name="prenom" placeholder="Prénom" @error('prenom') is-invalid @enderror value="{{ old('prenom') }}" required>
+                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" placeholder="Prénom"  value="{{ old('prenom') }}" required>
                                 @error('prenom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="col">
-                            <input type="date" class="form-control" name="date_naiss" required placeholder="Date de naissance" @error('date_naiss') is-invalid @enderror value="{{ old('date_naiss') }}" required>
+                            <input type="date" class="form-control @error('date_naiss') is-invalid @enderror" name="date_naiss" required placeholder="Date de naissance"  value="{{ old('date_naiss') }}" required>
                             @error('date_naiss')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                     <div class="row mb-1">
 
                             <div class="col">
-                                <input type="email" class="form-control" name="email" placeholder="Email" @error('email') is-invalid @enderror value="{{ old('email') }}" required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email"  value="{{ old('email') }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="tel" class="form-control" name="tel" placeholder="Telephone" @error('tel') is-invalid @enderror value="{{ old('tel') }}" required>
+                                <input type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" placeholder="Telephone"  value="{{ old('tel') }}" required>
                                 @error('tel')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control" name="ville" placeholder="Ville" @error('ville') is-invalid @enderror value="{{ old('ville') }}" required>
+                                <input type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" placeholder="Ville"  value="{{ old('ville') }}" required>
                                 @error('ville')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -330,7 +330,7 @@
                     <div class="row mb-1">
 
                             <div class="col">
-                                <input type="text" class="form-control" name="ecole" placeholder="Ecole" @error('ecole') is-invalid @enderror value="{{ old('ecole') }}" required>
+                                <input type="text" class="form-control @error('ecole') is-invalid @enderror" name="ecole" placeholder="Ecole"  value="{{ old('ecole') }}" required>
                                 @error('ecole')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -376,7 +376,7 @@
 
                     <div class="row mb-1">
                             <div class="col">
-                                <input type="password" class="form-control" name="password" placeholder="Mot de passe" @error('password') is-invalid @enderror value="{{ old('password') }}" required autocomplete="new-password">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Mot de passe"  value="{{ old('password') }}" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
