@@ -57,6 +57,22 @@ class RegisterController extends Controller
 
     }
 
+    public function confirm ($id, $token) {
+
+        $user = User::where('id', $id)->where('confirmation_token', $token)->first();
+
+        if ($user) {
+
+                $user->update(['confirmation_token' => null]);
+                $this->guard()->login($user);
+                return redirect($this->redirectPath())->with('success', 'votre compte a bien été confirmer');
+
+        } else {
+            return redirect('/login')->with('error', 'ce lien ne semble plus valide');
+        }
+
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -102,7 +118,7 @@ class RegisterController extends Controller
             'classe' => $data['classe'],
             'photo' => $data['photo'],
             'password' => Hash::make($data['password']),
-            'confirmation_token' => bcrypt(Str::random(16)),
+            'confirmation_token' => str_replace('/', '', bcrypt(Str::random(16))),
         ]);
     }
 }

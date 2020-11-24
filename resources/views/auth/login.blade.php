@@ -14,6 +14,13 @@
                             </div>
                         </div>
                         @endif
+                        @if (session('error'))    
+                        <div class="container">
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        </div>
+                        @endif
                     <form class="mt-5 m-2" method="POST" action="{{ route('login') }}">
                         @csrf
                         <p class="h1 text-center mb-5">Connexion</p>

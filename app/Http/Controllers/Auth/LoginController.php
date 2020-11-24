@@ -39,6 +39,15 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    protected function credentials(Request $request)
+    {
+        return array_merge(
+
+                $request->only($this->username(), 'password'),
+                ['confirmation_token' => null]
+        );
+    }
+
     public function login (Request $request)
     {
         $input = $request->all();
@@ -47,9 +56,10 @@ class LoginController extends Controller
 
             'email' => 'required|email',
             'password' => 'required',
+            
         ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'], 'confirmation_token' => null,)))
         {
             if (auth()->user()->is_admin == 1) {
         
@@ -62,8 +72,10 @@ class LoginController extends Controller
 
             }else {
                 
-                return redirect()->route('login')->with('error','le mail et le mot de passe ne sont pas correcte.');
+                return redirect()->route('login')->with('error','Verifier votre email ou mot de passe');
             }
         }
         
+
+
 }

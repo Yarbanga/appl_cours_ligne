@@ -45,8 +45,8 @@ class RegisteredUser extends Notification
         ->subject('Confirmation d\'inscription au site www.paveduc.com')
                     ->line('Votre compte paveduc à bien été créé mais il dois être confirmé, merci de cliquer
                     sur le lien suivant')
-                    ->action('Confirmer mon compte', url("/confirmation/{$notifiable->id}/{$notifiable->confirmation_token}"))
-                    ->line('Si vous nete pas à l\'origine de email, veuillez ignoré!');
+                    ->action('Confirmer mon compte', url("/confirmation/{$notifiable->id}/" . urldecode($notifiable->confirmation_token)))
+                    ->line('Si vous n\'ête pas à l\'origine du mail, veuillez ignoré!');
     }
 
     /**
