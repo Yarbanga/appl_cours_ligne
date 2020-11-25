@@ -58,31 +58,29 @@
                                 @endif
                         </div>
 
-                        {{-- <div class="form-group">
+                         <div class="form-group">
                             <div >
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Se souvenir de moi ?') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        {{--<div class="form-group">
                             <div class="col-md-8 offset-md-4">
-                                {{-- <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
-                                </button> 
-
-                                
+                                </button>   
                             </div>
                         </div>--}}
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Connexion</button>
-                        <a href="{{ route ('register') }}" class="btn btn-primary" style="color:#fff;">S'inscrire</a>
+                            <a href="{{ route ('register') }}" class="btn btn-primary" style="color:#fff;">S'inscrire</a>
                             
                         </div>
 
