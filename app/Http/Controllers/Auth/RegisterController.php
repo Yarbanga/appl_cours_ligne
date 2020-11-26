@@ -92,7 +92,7 @@ class RegisterController extends Controller
             'genre' => ['required', 'string', 'max:10'],
             'pays' => ['required', 'string', 'max:255'],
             'classe' => ['required', 'string', 'max:10'],
-            'photo' => ['required', 'string'],
+            // 'photo' => ['required', 'string'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
@@ -105,6 +105,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $photoPath = request('photo')->store('uploads', 'public');
+
         return User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
@@ -116,7 +118,8 @@ class RegisterController extends Controller
             'genre' => $data['genre'],
             'pays' => $data['pays'],
             'classe' => $data['classe'],
-            'photo' => $data['photo'],
+            // 'photo' => $data['photoPath'],
+            'photo' => $photoPath,
             'password' => Hash::make($data['password']),
             'confirmation_token' => str_replace('/', '', bcrypt(Str::random(16))),
         ]);

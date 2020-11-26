@@ -7,7 +7,7 @@
 
 <div  class="col-lg-8" >
 
-                    <form class="mt-5 m-2" method="POST" action="{{ route('register') }}">
+                    <form class="mt-5 m-2" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <p class="h1 text-center mb-2">Inscription</p>
 
