@@ -1,7 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <a href="#">
-            <img src="images/icon/logo.png" alt="Cool Admin" />
+            <!-- <img src="images/icon/logo-mini.png" alt="Cool Admin" /> -->
         </a>
     </div>
     <div class="menu-sidebar__content js-scrollbar1">
@@ -9,23 +9,45 @@
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                    <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="index.html">Dashboard 1</a>
                         </li>
                         <li>
                             <a href="index2.html">Dashboard 2</a>
                         </li>
+                        
+                    </ul> -->
+                </li>
+                
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Classes</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="index3.html">Dashboard 3</a>
+                            <a href="">Liste des classes</a>
                         </li>
                         <li>
-                            <a href="index4.html">Dashboard 4</a>
+                            <a href="">Ajouter une classe</a>
                         </li>
+                        
                     </ul>
                 </li>
-                <li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-table"></i>Leçons</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="">Liste</a>
+                        </li>
+                        <li>
+                            <a href="">Ajouter une  leçon</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <!-- <li>
                     <a href="chart.html">
                         <i class="fas fa-chart-bar"></i>Charts</a>
                 </li>
@@ -44,33 +66,19 @@
                 <li>
                     <a href="map.html">
                         <i class="fas fa-map-marker-alt"></i>Maps</a>
-                </li>
+                </li> -->
+                
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Pages</a>
+                        <i class="fas fa-desktop"></i>Exercice</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="login.html">Login</a>
+                            <a href="">liste</a>
                         </li>
                         <li>
-                            <a href="register.html">Register</a>
+                            <a href="">Ajouter exercice</a> 
                         </li>
-                        <li>
-                            <a href="forget-pass.html">Forget Password</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-desktop"></i>UI Elements</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="button.html">Button</a>
-                        </li>
-                        <li>
-                            <a href="badge.html">Badges</a>
-                        </li>
-                        <li>
+                        <!-- <li>
                             <a href="tab.html">Tabs</a>
                         </li>
                         <li>
@@ -96,7 +104,7 @@
                         </li>
                         <li>
                             <a href="typo.html">Typography</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
             </ul>

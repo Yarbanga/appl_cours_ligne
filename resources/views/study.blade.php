@@ -4,10 +4,10 @@
 
 <div class="row container center">
 								<div class="col-lg-12">
-                  				<p class="text-center mt-2"> Bienvenu(e) </p>
+                  				<p class="text-center mt-4"> Bienvenu(e) </p>
                 				</div>
 
-								<img src="{{asset('storage').'/'.Auth::user() -> photo}}" class="img-fluid img-responsive rounded-circle mx-auto d-block mt-1" alt="profile" width="150px" style="height:150px;"/>
+								<img src="{{asset('storage').'/'.Auth::user() -> photo}}" class="img-fluid img-responsive rounded-circle mx-auto d-block" alt="profile" width="150px" style="height:150px;"/>
                 				<div class="col-lg-12">
                   				<h2 class="h4 text-center mt-3">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</h2>
                 				</div>

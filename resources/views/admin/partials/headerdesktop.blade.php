@@ -10,7 +10,7 @@
                 </form>
                 <div class="header-button">
                     <div class="noti-wrap">
-                        <div class="noti__item js-item-menu">
+                        <!-- <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-comment-more"></i>
                             <span class="quantity">1</span>
                             <div class="mess-dropdown js-dropdown">
@@ -41,7 +41,7 @@
                                     <a href="#">View all messages</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                         <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-email"></i>
                             <span class="quantity">1</span>
@@ -80,24 +80,24 @@
                                     <a href="#">See all emails</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-notifications"></i>
                             <span class="quantity">3</span>
                             <div class="notifi-dropdown js-dropdown">
                                 <div class="notifi__title">
-                                    <p>You have 3 Notifications</p>
+                                    <p>Vous avez 1 Notifications</p>
                                 </div>
                                 <div class="notifi__item">
                                     <div class="bg-c1 img-cir img-40">
                                         <i class="zmdi zmdi-email-open"></i>
                                     </div>
                                     <div class="content">
-                                        <p>You got a email notification</p>
-                                        <span class="date">April 12, 2018 06:50</span>
+                                        <p>nouvelle notification</p>
+                                        <span class="date">12 Avril 2020</span>
                                     </div>
                                 </div>
-                                <div class="notifi__item">
+                                <!-- <div class="notifi__item">
                                     <div class="bg-c2 img-cir img-40">
                                         <i class="zmdi zmdi-account-box"></i>
                                     </div>
@@ -114,43 +114,43 @@
                                         <p>You got a new file</p>
                                         <span class="date">April 12, 2018 06:50</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="notifi__footer">
-                                    <a href="#">All notifications</a>
+                                    <a href="#">toutes les notifications</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
-                            <div class="image">
+                            <div class="image rounded-circle">
                                 <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="#">john doe</a>
+                                <a class="js-acc-btn" href="#">{{ Auth::user()-> nom }}</a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
-                                    <div class="image">
+                                    <div class="image rounded-circle">
                                         <a href="#">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="images/icon/avatar-01.jpg"  alt="John Doe" />
                                         </a>
                                     </div>
                                     <div class="content">
                                         <h5 class="name">
-                                            <a href="#">john doe</a>
+                                            <a href="#">{{ Auth::user()-> nom }}</a>
                                         </h5>
-                                        <span class="email">johndoe@example.com</span>
+                                        <span class="email">{{ Auth::user()-> email }}</span>
                                     </div>
                                 </div>
-                                <div class="account-dropdown__body">
+                                <!-- <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
                                         <a href="#">
                                             <i class="zmdi zmdi-account"></i>Account</a>
                                     </div>
                                     
                                     
-                                </div>
+                                </div> -->
                                 <div class="account-dropdown__footer">
                                     
                                         <a href="{{ route('logout') }}" 

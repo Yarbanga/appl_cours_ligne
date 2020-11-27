@@ -5,7 +5,6 @@
 <div class="page-wrapper">
 
     <!-- HEADER MOBILE-->
-    @include('admin.partials.header')
     <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
