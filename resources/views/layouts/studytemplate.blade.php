@@ -20,13 +20,18 @@
             <div class="cover-container">
 				<div id="contenu" class="jumbotron jumbotron-fluid center-text rounded" style="background:#e8e8e8";>
 					<div class="row">
-						<div class="container col-lg-4 center-text border-radius-15">
+						
 							
                             
-							@yield('contenu')
+						@yield('contenu')	
 
 							
-                        </div>
+                        
                     </div>
                 </div>
             </div>
+		
+	</div>
+
+			
+

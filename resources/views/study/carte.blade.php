@@ -1,8 +1,8 @@
 @extends('layouts.studytemplate')
 
 @section('contenu')
-<div class="container col-lg-4 center-text border-radius-15">
-						<div class="row container center">
+            <div>
+                            <div class="row container center">
 								<div class="col-lg-12">
                   				<p class="text-center mt-4"> Bienvenu(e) </p>
                 				</div>
@@ -16,7 +16,7 @@
 							<div class="row container-fluid ">
 							    <div class="col-lg-12 mt-3">
 							    	<ul class="usrperform" >
-										<a href="{{ route('study.show', Auth::user()->id) }}"><li>Ma carte scolaire</li></a>
+										<a href="{{ route('study.show', Auth::user()->id) }}" class="active"><li>Ma carte scolaire</li></a>
 										<a href="performances.html"><li>Mes performances</li></a>
 										<a href=""><li>Programmes</li</a>
 										<a href="emploiDuTemps.html"><li>Mon emploi du temps</li></a>
@@ -30,5 +30,10 @@
                 				@include('partials.deconnexionBtn')
 							</div>
 
-                    </div>
+            </div>
+
+            <div>
+                    
+            </div>
+
 @endsection
