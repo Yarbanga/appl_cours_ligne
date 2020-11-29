@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class UserController extends Controller
 {
@@ -57,7 +58,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        
+        return view('study.carte_edit');
     }
 
     /**
@@ -69,7 +71,63 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user= User::find(Auth::user()->id);
+
+        if ($user) {
+
+            if (Auth::user()->email === $request['email']) {
+
+                $data=request()->validate([
+
+                'nom' => ['required', 'string', 'max:255'],
+                'prenom' => ['required', 'string', 'max:255'],
+                'date_naiss' => ['required', 'date', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+                'tel' => ['required', 'string', 'max:255'],
+                'ecole' => ['required', 'string', 'max:255'],
+                'ville' => ['required', 'string', 'max:255'],
+                'genre' => ['required', 'string', 'max:10'],
+                'pays' => ['required', 'string', 'max:255'],
+                'classe' => ['required', 'string', 'max:10'],
+                // 'photo' => ['required', 'string'],
+                'password' => ['required', 'string', 'min:4', 'confirmed'],
+
+            ]);
+
+            } else {
+
+                $data=request()->validate([
+
+                    'nom' => ['required', 'string', 'max:255'],
+                    'prenom' => ['required', 'string', 'max:255'],
+                    'date_naiss' => ['required', 'date', 'max:255'],
+                    'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                    'tel' => ['required', 'string', 'max:255'],
+                    'ecole' => ['required', 'string', 'max:255'],
+                    'ville' => ['required', 'string', 'max:255'],
+                    'genre' => ['required', 'string', 'max:10'],
+                    'pays' => ['required', 'string', 'max:255'],
+                    'classe' => ['required', 'string', 'max:10'],
+                    // 'photo' => ['required', 'string'],
+                    'password' => ['required', 'string', 'min:4', 'confirmed'],
+
+                    ]);
+                }
+                
+            if(request('photo'))
+                {
+                    $photoPath=request('photo')->store('uploads', 'public');
+                    $user->update(array_merge($data, ['photo' =>$photoPath]));
+                }
+
+            else{
+                     $user->update($data);
+                }
+
+                $user->save();
+
+            return redirect()->route('study.show', Auth::user()->id);
+        } 
     }
 
     /**

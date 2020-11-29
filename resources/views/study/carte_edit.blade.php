@@ -1,19 +1,49 @@
-@extends('layouts.template')
+@extends('layouts.studytemplate')
 
 @section('contenu')
+            <div class="col-4">
+                            <div class="row container center">
+								<div class="col-lg-12">
+                  				<p class="text-center mt-4"> Bienvenu(e) </p>
+                				</div>
 
-@include('partials.header')
-</div>
+								<img src="{{asset('storage').'/'.Auth::user() -> photo}}" class="img-fluid img-responsive rounded-circle mx-auto d-block  p-1" alt="profile" width="150px" style="height:150px;"/>
+                				<div class="col-lg-12">
+                  				<h2 class="h4 text-center mt-3">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</h2>
+                				</div>
+							</div>
 
-<div  class="col-lg-8" >
+							<div class="row container-fluid ">
+							    <div class="col-lg-12 mt-3">
+							    	<ul class="usrperform" >
+										<a href="{{ route('study.show', Auth::user()->id) }}" class="active"><li>Ma carte scolaire</li></a>
+										<a href="performances.html"><li>Mes performances</li></a>
+										<a href=""><li>Programmes</li</a>
+										<a href="emploiDuTemps.html"><li>Mon emploi du temps</li></a>
+										<a href=""><li>Notifications</li></a>
+										<a href=""><li>Exercices</li></a>
+									</ul>
+               					</div>
+							</div>
 
-                    <form class="mt-5 m-2" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+							<div class="row container-fluid">
+                				@include('partials.deconnexionBtn')
+							</div>
+
+            </div>
+
+            <div class="col-8 container bg-info ">
+                    <br><br><div class="d-flex"> 
+                                <div class="ml-5 center-text h4">Modifier la carte scolaire</div>
+                            </div>
+                            <div class="m-1 p-1" style="background:#e8e8e8"; >
+                                    
+							<form class="mt-5 m-2" method="POST" action="{{ route('study.update', Auth::user()->id) }}" enctype="multipart/form-data">
                         @csrf
-                        <p class="h1 text-center mb-2">Inscription</p>
-
+                    	@method('PUT')
                         <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" pattern ='[A-z]' placeholder="nom"  value="{{ old('nom') }}" required autocomplete="name" autofocus>
+                                <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" placeholder="nom"  value="{{ old('nom', Auth::user()->nom) }}" required autocomplete="name" autofocus>
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -21,7 +51,7 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" placeholder="Prénom" pattern ='[A-z]'  value="{{ old('prenom') }}" required>
+                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" placeholder="Prénom"  value="{{ old('prenom', Auth::user()->prenom ) }}" required>
                                 @error('prenom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -30,7 +60,7 @@
                             </div>
 
                             <div class="col">
-                            <input type="date" class="form-control @error('date_naiss') is-invalid @enderror" name="date_naiss" required placeholder="Date de naissance"  value="{{ old('date_naiss') }}" required>
+                            <input type="date" class="form-control @error('date_naiss') is-invalid @enderror" name="date_naiss" required placeholder="Date de naissance"  value="{{ old('date_naiss', Auth::user()->date_naiss) }}" required>
                             @error('date_naiss')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -41,7 +71,7 @@
                     <div class="row mb-1">
 
                             <div class="col">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email"  value="{{ old('email') }}" required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email"  value="{{ old('email', Auth::user()->email ) }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,7 +79,7 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" placeholder="Telephone"  value="{{ old('tel') }}" required>
+                                <input type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" placeholder="Telephone"  value="{{ old('tel', Auth::user()->tel ) }}" required>
                                 @error('tel')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +89,7 @@
                     </div>
                     <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" placeholder="Ville"  value="{{ old('ville') }}" required>
+                                <input type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" placeholder="Ville"  value="{{ old('ville', Auth::user()->ville ) }}" required>
                                 @error('ville')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -330,7 +360,7 @@
                     <div class="row mb-1">
 
                             <div class="col">
-                                <input type="text" class="form-control @error('ecole') is-invalid @enderror" name="ecole" placeholder="Ecole"  value="{{ old('ecole') }}" required>
+                                <input type="text" class="form-control @error('ecole') is-invalid @enderror" name="ecole" placeholder="Ecole"  value="{{ old('ecole', Auth::user()->ecole) }}" required>
                                 @error('ecole')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -362,10 +392,11 @@
                     <div class="row mb-1">
 
                             <div class="col">
-                                <select name="genre" class="form-control" id="exampleFormControlSelect1" value="{{ old('email') }}" required>
+                                <select name="genre" class="form-control" id="exampleFormControlSelect1" value="{{ old('genre') }}" required>
                                 <option value="0" selected="selected">Choisir Genre</option>
-                                <option value="Masculin">Masculin</option>
-                                <option value="Féminin">Feminin</option>
+                                <option value="Masculin" >Masculin</option>
+								<option value="Féminin">Féminin</option>
+                                
                             </select>
                             </div>
                             <div class="col">
@@ -389,15 +420,14 @@
                       
 
                         <div class="text-center mt-5">
-                            <button type="submit" class="btn btn-primary">inscription</button>
-                            <a href="{{ route('acceuil') }}" class="btn btn-primary" style="color:#fff;">Annuler</a>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <a href="{{ route('study.show', Auth::user()->id) }}" class="btn btn-primary" style="color:#fff;">Annuler</a>
 
                         </div>
 
                     </form>
+					
 
-                    @include('partials.basecontact')
-                    @include('partials.jumbotron')
-                    @include('partials.footer')
+            </div>
 
 @endsection

@@ -1,13 +1,13 @@
 @extends('layouts.studytemplate')
 
 @section('contenu')
-            <div>
+            <div class="col-4">
                             <div class="row container center">
 								<div class="col-lg-12">
                   				<p class="text-center mt-4"> Bienvenu(e) </p>
                 				</div>
 
-								<img src="{{asset('storage').'/'.Auth::user() -> photo}}" class="img-fluid img-responsive rounded-circle mx-auto d-block" alt="profile" width="150px" style="height:150px;"/>
+								<img src="{{asset('storage').'/'.Auth::user() -> photo}}" class="img-fluid img-responsive rounded-circle mx-auto d-block  p-1" alt="profile" width="150px" style="height:150px;"/>
                 				<div class="col-lg-12">
                   				<h2 class="h4 text-center mt-3">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</h2>
                 				</div>
@@ -32,8 +32,29 @@
 
             </div>
 
-            <div>
-                    
+            <div class="col-8 container bg-info ">
+                    <br><br><div class="d-flex"> 
+                                <div class="p-1" style="background:#e8e8e8";>Classe de : {{ Auth::user()->classe }}</div>
+                                <div class="ml-5 center-text h4">Ma carte scolaire</div>
+                            </div>
+                            <div class="m-5 p-5" style="background:#e8e8e8"; >
+                                    <div>Nom : {{ Auth::user()->nom }}</div>
+                                    <div>Prénom : {{ Auth::user()->prenom }}</div>
+                                    <div>date de niassance : {{ Auth::user()->date_naiss }}</div>
+                                    <div>Email : {{ Auth::user()->email }}</div>
+                                    <div>Ville : {{ Auth::user()->ville }}</div>
+                                    <div>Ecole : {{ Auth::user()->ecole }}</div>
+                                    <div>Genre : {{ Auth::user()->genre }}</div>
+                                    <div>Téléphone : {{ Auth::user()->tel }}</div>
+                                    <div>Pays : {{ Auth::user()->pays }}</div>
+                                    
+                            </div>
+                            <div class="text-center mt-5">
+                            <!-- <button type="submit" class="btn btn-primary ">inscription</button> -->
+                            <a href="{{ route('study.edit', Auth::user()->id) }}" class="btn btn-primary" style="color:#fff;">Modifier</a>
+
+                        </div>
+
             </div>
 
 @endsection

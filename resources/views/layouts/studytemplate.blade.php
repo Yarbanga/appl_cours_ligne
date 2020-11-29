@@ -18,8 +18,8 @@
     <div class="site-wrapper-inner" >
 
             <div class="cover-container">
-				<div id="contenu" class="jumbotron jumbotron-fluid center-text rounded" style="background:#e8e8e8";>
-					<div class="row">
+				<div id="contenu" class="jumbotron jumbotron-fluid center-text" style="background:#e8e8e8";>
+					<div class="row d-flex">
 						
 							
                             
