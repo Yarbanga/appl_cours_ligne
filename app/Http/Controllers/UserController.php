@@ -140,4 +140,29 @@ class UserController extends Controller
     {
         //
     }
+
+    public function performance ()
+    {
+        return view('study.performance');
+    }
+
+    public function programme ()
+    {
+        return view('study.programme');
+    }
+
+    public function temps ()
+    {
+        return view('study.temps');
+    }
+
+    public function notification ()
+    {
+        return view('study.notification');
+    }
+
+    public function exo ()
+    {
+        return view('study.exo');       
+    }
 }

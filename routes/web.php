@@ -29,3 +29,9 @@ Route::get('admin/dashboard', 'HomeController@adminDashboard')->name('admin.dash
 Route::get('confirmation/{id}/{token}', 'Auth\RegisterController@confirm');
 
 Route::resource('study', 'UserController');
+
+Route::get('study', 'UserController@performance')->name('performance');
+Route::get('programme', 'UserController@programme')->name('programme');
+Route::get('temps', 'UserController@temps')->name('temps');
+Route::get('notify', 'UserController@notification')->name('notification');
+Route::get('exo', 'UserController@exo')->name('exo');

@@ -13,7 +13,7 @@
 
                         <div class="row mb-1">
                             <div class="col">
-                                <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" pattern ='[A-z]' placeholder="nom"  value="{{ old('nom') }}" required autocomplete="name" autofocus>
+                                <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom"  placeholder="nom"  value="{{ old('nom') }}" required autocomplete="name" autofocus>
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -21,7 +21,7 @@
                                 @enderror
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" placeholder="Prénom" pattern ='[A-z]'  value="{{ old('prenom') }}" required>
+                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" placeholder="Prénom"  value="{{ old('prenom') }}" required>
                                 @error('prenom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
