@@ -19,7 +19,7 @@
 							    	<ul class="usrperform" >
 										<a href="{{ route('study.show', Auth::user()->id) }}"><li>Ma carte scolaire</li></a>
 										<a href="{{ route('performance') }}" class="active"><li>Mes performances</li></a>
-										<a href=""><li>Programmes</li</a>
+										<a href="{{ route('programme') }}"><li>Programmes</li</a>
 										<a href="{{ route('temps') }}"><li>Mon emploi du temps</li></a>
 										<a href=""><li>Notifications</li></a>
 										<a href=""><li>Exercices</li></a>
