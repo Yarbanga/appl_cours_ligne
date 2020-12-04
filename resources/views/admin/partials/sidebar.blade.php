@@ -8,7 +8,7 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
-                    <a class="js-arrow" href="#">
+                    <a class="js-arrow" href="{{ route ('admin.dashboard') }}">
                         <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
                     <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
@@ -26,10 +26,10 @@
                         <i class="fas fa-desktop"></i>Classes</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">Liste des classes</a>
+                            <a href="{{ route('classeliste') }}">Liste des classes</a>
                         </li>
                         <li>
-                            <a href="">Ajouter une classe</a>
+                            <a href="{{ url('classe') }}">Ajouter une classe</a>
                         </li>
                         
                     </ul>
@@ -42,9 +42,11 @@
                             <a href="">Liste</a>
                         </li>
                         <li>
-                            <a href="">Ajouter une  leçon</a>
+                            <a href="{{ url('lesson') }}">Ajouter une leçon</a>
                         </li>
-                        
+                        <li>
+                            <a href="{{ url('matiere') }}">Ajouter une matière</a>
+                        </li>
                     </ul>
                 </li>
                 <!-- <li>
@@ -73,10 +75,10 @@
                         <i class="fas fa-desktop"></i>Exercice</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">liste</a>
+                            <a href="#">liste</a>
                         </li>
                         <li>
-                            <a href="">Ajouter exercice</a> 
+                            <a href="#">Ajouter exercice</a> 
                         </li>
                         <!-- <li>
                             <a href="tab.html">Tabs</a>

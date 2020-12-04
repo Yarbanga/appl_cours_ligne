@@ -2,6 +2,13 @@
 
 @section('contenu')
 <div class="container col-lg-4 center-text border-radius-15">
+								@if (session('success'))    
+                                <div class="container">
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                </div>
+                                @endif
 						<div class="row container center">
 								<div class="col-lg-12">
                   				<p class="text-center mt-4"> Bienvenu(e) </p>

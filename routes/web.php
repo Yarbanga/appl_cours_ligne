@@ -35,3 +35,15 @@ Route::get('programme', 'UserController@programme')->name('programme');
 Route::get('temps', 'UserController@temps')->name('temps');
 Route::get('notify', 'UserController@notification')->name('notification');
 Route::get('exo', 'UserController@exo')->name('exo');
+
+Route::get('classeliste', 'GeneralController@classeliste')->name('classeliste');
+Route::get('classe', 'GeneralController@getclasse');
+Route::post('classe', 'GeneralController@addclasse');
+
+// ajouter une matiere
+Route::get('matiere', 'GeneralController@getmatiere');
+Route::post('matiere', 'GeneralController@addmatiere');
+
+//lesson
+Route::get('lesson', 'GeneralController@getlesson');
+Route::post('lesson', 'GeneralController@addlesson');

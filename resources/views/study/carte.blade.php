@@ -19,7 +19,7 @@
 							    	<ul class="usrperform" >
 										<a href="{{ route('study.show', Auth::user()->id) }}" class="active"><li>Ma carte scolaire</li></a>
 										<a href="{{ route('performance') }}"><li>Mes performances</li></a>
-										<a href=""><li>Programmes</li</a>
+										<a href="{{ route('programme') }}"><li>Programmes</li</a>
 										<a href="{{ route('temps') }}"><li>Mon emploi du temps</li></a>
 										<a href=""><li>Notifications</li></a>
 										<a href=""><li>Exercices</li></a>
@@ -54,7 +54,7 @@
                             <!-- <button type="submit" class="btn btn-primary ">inscription</button> -->
                             <a href="{{ route('study.edit', Auth::user()->id) }}" class="btn btn-primary" style="color:#fff;">Modifier</a>
 
-                        </div>
+                            </div>
 
             </div>
 

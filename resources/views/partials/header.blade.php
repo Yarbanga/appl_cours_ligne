@@ -29,6 +29,9 @@
 									<div class="carousel-item">
 									   <p class="text-center">Apprendre a distance <br/></p>
 									</div>
+									<div class="carousel-item">
+									   <p class="text-center">Parténaire<br/></p>
+									</div>
 
 								  </div>
 
@@ -47,6 +50,9 @@
 									</div>
 									<div class="carousel-item">
 									   <img class="d-block w-100" src="{{ asset('acceuil/img/slide.png') }}">
+									</div>
+									<div class="carousel-item">
+									   <img class="d-block w-100" src="{{ asset('acceuil/img/jod.png') }}">
 									</div>
 
 								  </div>
