@@ -29,6 +29,12 @@ class CreateUsersTable extends Migration
             $table->boolean('is_admin')->nullable(); 
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
+            $table->bigInteger('classe_id')->unsigned()->nullable();
+			$table->foreign('classe_id')
+				  ->references('id')
+				  ->on('classes')
+				  ->onDelete('restrict')
+				  ->onUpdate('restrict');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -41,6 +47,10 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::table('users', function(Blueprint $table) {
+			$table->dropForeign('users_classe_id_foreign');
+		});
+
         Schema::dropIfExists('users');
     }
 }

@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h4 class="title-1">Listes les classes</h4>
+                                    <h4 class="title-3">Listes les classes</h4>
                                     
                                 </div>
                                 

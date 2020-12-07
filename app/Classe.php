@@ -11,4 +11,14 @@ class Classe extends Model
         'classe'
     ];
 
+    public function users()
+	{
+		return $this->hasMany('App\User');
+	} 
+
+    public function lessons()
+	{
+		return $this->belongsToMany('App\Lesson');
+	} 
+
 }
