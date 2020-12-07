@@ -43,8 +43,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Non de la matière :</label>
-                                    <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="exampleFormControlInput1" placeholder="exemple = Histoire">
-                                    @error('nom')
+                                    <input type="text" name="matiere" class="form-control @error('matiere') is-invalid @enderror" id="exampleFormControlInput1" placeholder="exemple = Histoire">
+                                    @error('matiere')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

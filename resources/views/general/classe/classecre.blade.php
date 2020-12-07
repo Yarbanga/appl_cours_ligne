@@ -36,8 +36,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Non de la classe :</label>
-                                    <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="exampleFormControlInput1" placeholder="exemple = 4ième">
-                                    @error('nom')
+                                    <input type="text" name="classe" class="form-control @error('classe') is-invalid @enderror" id="exampleFormControlInput1" placeholder="exemple = 4ième">
+                                    @error('classe')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

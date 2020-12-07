@@ -33,12 +33,12 @@ class GeneralController extends Controller
 
         $this->validate($request, [
 
-            'nom' => 'required|string'
+            'classe' => 'required|string'
         ]);
 
         Classe::create([
             
-            'nom' => $request->nom
+            'classe' => $request->classe
           ]);
           
         return redirect()->route('classeliste')->with('success', 'nouvelle classe ajouter');
@@ -57,12 +57,12 @@ class GeneralController extends Controller
 
         $this->validate($request, [
 
-            'nom' => 'required|string'
+            'matiere' => 'required|string'
         ]);
 
         Matiere::create([
             
-            'nom' => $request->nom
+            'matiere' => $request->matiere
           ]);
           
         return back()->with('success', 'matière crée avec success');
@@ -73,8 +73,9 @@ class GeneralController extends Controller
     public function getlesson()
     {
         $matieres = Matiere::All();
+        $classes = Classe::All();
 
-        return view ('general.lesson.addlesson', compact('matieres'));
+        return view ('general.lesson.addlesson', compact('matieres', 'classes'));
     }
 
     public function addlesson(Request $request)

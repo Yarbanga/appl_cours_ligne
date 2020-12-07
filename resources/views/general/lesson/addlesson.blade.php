@@ -39,30 +39,40 @@
                             
                         </div> <br><br>
                         <!-- ajouter la classe -->
-                        <form method="POST" action="{{ url('lesson') }}" class="form-inline">
+                        <form method="POST" action="{{ url('lesson') }}" class="">
                                 @csrf
-                                <div class="form-group">
-                                    
-                                    <select name="matiere" class="form-control" id="exampleFormControlSelect1" value="{{ old('email') }}" required>
+                                <div class="row form-group">
+                                    <label for="inputPassword6" class="col-4">Matière</label>
+                                    <select name="matiere" class="form-control col-5" id="exampleFormControlSelect1" value="{{ old('email') }}" required>    
+                                    <option selected="selected">Choisir matiere</option> 
                                     @foreach( $matieres as $matiere )
-                                    <option value="matiere" selected="selected">Choisir matiere</option> 
+                                    <option value="{{ $matiere -> id }}" >{{ $matiere -> matiere }}</option>
                                     @endforeach                   
-                                    </select>
-                                    
+                                    </select>                                    
                                 </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword6">Chapitre :</label>
-                                        <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                                    <div class="row form-group">
+                                        <label for="inputPassword6" class="col-4">Chapitre </label>
+                                        <input type="text" id="inputPassword6" class="form-control  col-5" aria-describedby="passwordHelpInline" placeholder="">
                                         <small id="passwordHelpInline" class="">
                                         </small>
                                     </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Non de la matière :</label>
-                                    <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="exampleFormControlInput1" placeholder="exemple = Histoire">
+                                <div class="row form-group">
+                                    <label for="exampleFormControlInput1" class="col-4">leçon titre </label>
+                                    <input type="text" name="nom" class="form-control col-5 @error('nom') is-invalid @enderror" id="exampleFormControlInput1" placeholder="">
                                     @error('nom')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="row form-group">
+                                    <label for="inputPassword6" class="col-4">Matière</label>
+                                    <select name="classe" class="form-control col-5" id="exampleFormControlSelect1" value="{{ old('email') }}" required>    
+                                    <option selected="selected">Choisir classe</option> 
+                                    @foreach( $classes as $classe )
+                                    <option value="{{ $classe -> id }}" >{{ $classe -> classe }}</option>
+                                    @endforeach                   
+                                    </select>                                    
                                 </div>
 
                                 <div class="text-center mt-5">

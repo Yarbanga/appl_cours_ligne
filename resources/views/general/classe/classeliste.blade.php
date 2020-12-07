@@ -65,7 +65,7 @@
                                                 </div>
                                                
                                                 <div class="text">
-                                                <a href=""><h2>{{ $classe->nom }} </h2></a>                                                                          
+                                                <a href=""><h2>{{ $classe->classe }} </h2></a>                                                                          
                                                 </div>              
                                             </div>
                                             
