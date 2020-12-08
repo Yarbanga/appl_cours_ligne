@@ -56,7 +56,7 @@
                         </div> <br><br>
                         <!-- ajouter -->
                         <div class="row m-t-5">
-                            @foreach ( $classes as $classe )
+                              
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="overview-item overview-item--c1">
                                         <div class="overview__inner">
@@ -65,14 +65,14 @@
                                                 </div>
                                                
                                                 <div class="text">
-                                                <a href="{{ route('lessonliste') }}"><h2>{{ $classe->classe }}</h2></a>                                                                          
+                                                <a href="{{ route('lessonliste') }}"><h2></h2></a>                                                                          
                                                 </div>              
                                             </div>
                                             
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            
                         </div>
                         
                     </div>

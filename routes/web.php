@@ -47,3 +47,5 @@ Route::post('matiere', 'GeneralController@addmatiere');
 //lesson
 Route::get('lesson', 'GeneralController@getlesson');
 Route::post('lesson', 'GeneralController@addlesson');
+
+Route::get('lessonliste', 'GeneralController@lessonliste')->name('lessonliste');
