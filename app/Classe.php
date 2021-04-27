@@ -21,4 +21,9 @@ class Classe extends Model
 		return $this->belongsToMany('App\Lesson');
 	} 
 
+	public function matieres()
+	{
+		return $this->hasMany('App\Matiere');
+	} 
+
 }

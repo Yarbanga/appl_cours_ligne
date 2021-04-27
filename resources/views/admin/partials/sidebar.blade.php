@@ -38,9 +38,9 @@
                     <a class="js-arrow" href="#">
                         <i class="fas fa-table"></i>Leçons</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
+                        <!-- <li>
                             <a href="">Liste</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ url('lesson') }}">Ajouter une leçon</a>
                         </li>

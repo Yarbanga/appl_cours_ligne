@@ -14,5 +14,9 @@ class Lesson extends Model
 	{
 		return $this->belongsToMany('App\Classe');
     } 
+    public function matiere()
+	{
+		return $this->belongsTo('App\Matiere');
+    } 
     
 }

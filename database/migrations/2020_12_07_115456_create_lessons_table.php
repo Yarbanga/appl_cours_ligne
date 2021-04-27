@@ -41,14 +41,8 @@ class CreateLessonsTable extends Migration
             $table->string('grandTroisPetitDeuxTexteDeux')->nullable();
             $table->string('grandTroisPetitTrois')->nullable();
             $table->string('grandTroisPetitTroisTexteTrois')->nullable();
-
-            $table->foreign('matiere_id')->references('id')->on('matieres')
-						->onDelete('restrict')
-                        ->onUpdate('restrict');
-            $table->foreign('classe_id')->references('id')->on('classes')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-
+            $table->foreign('matiere_id')->references('id')->on('matieres')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('classe_id')->references('id')->on('classes')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

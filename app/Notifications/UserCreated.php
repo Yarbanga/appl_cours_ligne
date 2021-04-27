@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+
 class UserCreated extends Notification
 {
     use Queueable;
@@ -49,6 +50,7 @@ class UserCreated extends Notification
                     ->line('Un nouvel utilisateur s\'est enregistré.')
                     ->line('Nom :'.$this->user->nom)
                     ->line('Prénom :'.$this->user->prenom)
+                    ->line('Numéro :'.$this->user->tel)
                     ->line('Email :'.$this->user->email);
     }
 
